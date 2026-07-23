@@ -1,5 +1,5 @@
 ---
-name: "md-to-docx"
+name: md-to-docx
 description: "将 Markdown 文件转换为格式化的 Word 文档。当用户想要将 .md 转换为 .docx、从 Markdown 创建 Word 文档或提及文档转换时调用此技能。"
 ---
 # Markdown 转 Word 文档转换器
