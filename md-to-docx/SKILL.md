@@ -292,7 +292,7 @@ Markdown：[路径或内容]
 
 技能使用 Python 脚本，逻辑如下：
 
-### 步骤 0：版本管理（`version_manager.py`）
+### 步骤 0：版本管理（`scripts/version_manager.py`）
 
 ```python
 # 自动确定输出文件的版本号
@@ -300,7 +300,7 @@ version_info = get_versioned_output_paths(input_path, output_dir)
 # 返回：{ 'version': 1, 'docx_path': 'document_V1.docx', 'normalized_md_path': 'document_V1_normalized.md' }
 ```
 
-### 步骤 1：格式规范化（`markdown_normalizer.py`）
+### 步骤 1：格式规范化（`scripts/markdown_normalizer.py`）
 
 ```python
 # 自动修复常见的 Markdown 格式问题
@@ -309,7 +309,7 @@ normalized_content = normalizer.normalize(content)
 # 保存到：original_filename_normalized.md
 ```
 
-### 步骤 2：解析 Markdown（`md_to_docx.py`）
+### 步骤 2：解析 Markdown（`scripts/md_to_docx.py`）
 
 ```python
 # 将规范化的 Markdown 转换为结构化元素
@@ -464,14 +464,14 @@ npm install package-name
 
 | 文件 | 描述 |
 |------|------|
-| `md_to_docx.py` | 主转换脚本 |
-| `markdown_normalizer.py` | Markdown 格式规范化 |
-| `version_manager.py` | 自动版本编号 |
-| `create_template.py` | 模板生成脚本（可选） |
-| `template.docx` | 默认 Word 模板（可选） |
+| `scripts/md_to_docx.py` | 主转换脚本 |
+| `scripts/markdown_normalizer.py` | Markdown 格式规范化 |
+| `scripts/version_manager.py` | 自动版本编号 |
+| `scripts/create_template.py` | 模板生成脚本（可选） |
+| `templates/template.docx` | 默认 Word 模板（可选） |
 
 **说明：**
-- `template.docx` 是可选的模板文件，如果存在则使用，不存在则自动创建空白文档
-- `create_template.py` 可用于重新生成符合格式规范的模板文件
+- `templates/template.docx` 是可选的模板文件，如果存在则使用，不存在则自动创建空白文档
+- `scripts/create_template.py` 可用于重新生成符合格式规范的模板文件
 - 本 Skill 可完全独立运行，无需外部依赖
 ```
